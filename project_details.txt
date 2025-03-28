@@ -14,16 +14,28 @@ Cosine Simlarity Code Example:
 import math
 
 def cosine_similarity(vec1, vec2):
-    # Ensure both vectors are the same length
+    """This defines a function called cosine_similarity that takes two input 
+    vectors (vec1 and vec2), which are just lists of numbers. This first IF statement 
+    checks if the two vectors have the same length. You can't compare vectors of different dimensions."""
+
     if len(vec1) != len(vec2):
         raise ValueError("Vectors must be the same length")
 
     # Calculate dot product
+    # The dot product is a way to multiply two vectors and get a single number as the result — not another vector.
+    # Here we are multiplying each matching element from the two vectors, then adding up all those results.
+    # In cosine similarity, the dot product tells us how aligned two vectors are — basically, how similar their directions are. 
+    # The bigger the dot product, the more similar the vectors (as long as magnitudes are considered too).
+
     dot_product = sum(a * b for a, b in zip(vec1, vec2))
     
     # Calculate magnitudes
     magnitude1 = math.sqrt(sum(a**2 for a in vec1))
     magnitude2 = math.sqrt(sum(b**2 for b in vec2))
+
+    # Avoid division by zero
+    if magnitude1 == 0 or magnitude2 == 0:
+        return 0.0
 
     # Compute cosine similarity
     return dot_product / (magnitude1 * magnitude2)
@@ -34,6 +46,39 @@ vec_b = [4, 5, 6]
 
 similarity = cosine_similarity(vec_a, vec_b)
 print("Cosine Similarity:", similarity)
+
+___________________
+
+Calculation Breakdown:
+
+vec_a = [1, 2, 3]
+vec_b = [4, 5, 6]
+
+Step 1: Dot Product
+= (1×4) + (2×5) + (3×6)
+= 4 + 10 + 18
+= 32
+
+Step 2: Magnitude of vec_a
+= √(1² + 2² + 3²)
+= √(1 + 4 + 9)
+= √14 ≈ 3.7417
+
+Step 3: Magnitude of vec_b
+= √(4² + 5² + 6²)
+= √(16 + 25 + 36)
+= √77 ≈ 8.775
+
+Step 4: Cosine Similarity
+= 32 / (3.7417 × 8.775)
+≈ 32 / 32.8327
+≈ 0.9746
+
+Final result:
+Cosine Similarity: 0.9746318461970762
+
+# This means the vectors are very similar in direction — almost pointing the same way. 
+
 
 
 
