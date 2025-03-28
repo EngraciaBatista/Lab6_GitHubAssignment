@@ -1,0 +1,16 @@
+Cosine Similarity
+In subject area: Computer Science
+
+Cosine similarity is a measure of similarity between two vectors in an inner product space. 
+It determines the degree to which two vectors are pointing in the same direction by calculating 
+the cosine of the angle between them. Cosine similarity is commonly used in text analysis to measure 
+the similarity between documents based on the frequency of words or phrases they contain.
+
+Source: ScienceDirect
+https://www.sciencedirect.com/topics/computer-science/cosine-similarity#:~:text=Cosine%20similarity%20measures%20the%20similarity,document%20similarity%20in%20text%20analysis.
+
+
+
+
+
+
